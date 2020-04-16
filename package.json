@@ -1,0 +1,22 @@
+{
+  "name": "dai-mp",
+  "version": "0.0.1",
+  "description": "微信小程序的常用工具",
+  "main": "dist/index.js",
+  "miniprogram": "dist",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dai-siki/dai-js.git"
+  },
+  "keywords": [
+    "wechat",
+    "miniprogram",
+    "javascript"
+  ],
+  "author": "dai-siki",
+  "license": "ISC",
+  "dependencies": {
+    "dai-js": "^0.0.13"
+  },
+  "devDependencies": {}
+}
