@@ -1,20 +1,24 @@
+import deepClone from "../tools/deepClone.js";
+import isEqual from "../tools/isEqual.js";
+
 // 响应式
 function defineReactive(data, key, val, fn) {
 	let subs = data['$' + key] || [] // 新增
 	Object.defineProperty(data, key, {
 		configurable: true,
 		enumerable: true,
-		get: function() {
+		get() {
 			if (data.$target) {
 				subs.push(data.$target)
 				data['$' + key] = subs // 新增
 			}
-			return val
+			return deepClone(val)
 		},
-		set: function(newVal) {
-			if (newVal === val) return
-			fn & amp; & amp;
-			fn(newVal)
+		set(newVal) {
+			if (isEqual(newVal, val)) return
+			setTimeout(() => {
+				fn && fn(newVal)
+			}, 0)
 			if (subs.length) {
 				// 用 setTimeout 因为此时 this.data 还没更新
 				setTimeout(() => {
