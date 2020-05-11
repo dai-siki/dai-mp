@@ -1,6 +1,6 @@
 {
   "name": "dai-mp",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "微信小程序的常用工具",
   "main": "dist/index.js",
   "miniprogram": "dist",
